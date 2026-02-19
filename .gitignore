@@ -1,0 +1,30 @@
+# Environment and secrets
+.env
+.env~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+
+# SQLite databases (generated at runtime)
+*.db
+
+# macOS
+.DS_Store
+
+# Call recordings
+calls/
+
+# Editor backups
+*~
+*.swp
+*.swo
+
+# Internal planning docs
+plan.md
+opendental_api_reference.md
+
+# Claude
+.claude/
