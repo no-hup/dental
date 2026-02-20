@@ -615,6 +615,10 @@ class DentalAgent(AgentBase):
             name="route_intent",
             description="Route the caller to the correct flow based on their intent.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Let me get you to the right place.",
+                "Sure, let me pull that up.",
+            ],
             parameters={
                 "type": "object",
                 "properties": {
@@ -654,6 +658,11 @@ class DentalAgent(AgentBase):
             name="create_patient_tool",
             description="Create a new patient record in the system from the onboarding answers.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Let me set up your patient profile.",
+                "Getting you registered in our system.",
+                "Creating your record now.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def create_patient_tool(args, raw_data):
@@ -721,6 +730,11 @@ class DentalAgent(AgentBase):
             name="search_available_slots",
             description="Search for available appointment openings based on the caller's preferences.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Let me check the schedule for you.",
+                "Searching for available openings.",
+                "Looking at our appointment book.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def search_available_slots(args, raw_data):
@@ -830,6 +844,10 @@ class DentalAgent(AgentBase):
             name="select_slot",
             description="Select one of the available appointment slots.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Locking in that time slot for you.",
+                "Great choice, let me grab that one.",
+            ],
             parameters={
                 "type": "object",
                 "properties": {
@@ -880,6 +898,11 @@ class DentalAgent(AgentBase):
             name="book_appointment",
             description="Book the confirmed appointment slot.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Booking your appointment now.",
+                "Getting that on the schedule for you.",
+                "Reserving your spot.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def book_appointment_tool(args, raw_data):
@@ -963,6 +986,11 @@ class DentalAgent(AgentBase):
             name="get_patient_appointments",
             description="Look up the caller's upcoming scheduled appointments.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Let me pull up your upcoming appointments.",
+                "Checking your schedule now.",
+                "Looking up your visits.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def get_patient_appointments_tool(args, raw_data):
@@ -1043,6 +1071,10 @@ class DentalAgent(AgentBase):
             name="select_appointment_tool",
             description="Select which appointment the caller wants to act on.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Pulling up that appointment.",
+                "Let me get the details on that one.",
+            ],
             parameters={
                 "type": "object",
                 "properties": {
@@ -1088,6 +1120,11 @@ class DentalAgent(AgentBase):
             name="confirm_appointment_tool",
             description="Mark the selected appointment as confirmed.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Marking your appointment as confirmed.",
+                "Updating your confirmation status.",
+                "Locking that in for you.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def confirm_appointment_tool(args, raw_data):
@@ -1114,6 +1151,11 @@ class DentalAgent(AgentBase):
             name="reschedule_appointment_tool",
             description="Reschedule the appointment to a new time slot.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Moving your appointment to the new time.",
+                "Rescheduling that for you now.",
+                "Updating the schedule.",
+            ],
             parameters={
                 "type": "object",
                 "properties": {
@@ -1173,6 +1215,10 @@ class DentalAgent(AgentBase):
             name="cancel_appointment_tool",
             description="Cancel the selected appointment.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Processing your cancellation.",
+                "Removing that from the schedule.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def cancel_appointment_tool(args, raw_data):
@@ -1199,6 +1245,10 @@ class DentalAgent(AgentBase):
             name="keep_appointment",
             description="Caller decided not to cancel after all.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "No worries, keeping everything as is.",
+                "Good call, we'll keep you on the books.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def keep_appointment(args, raw_data):
@@ -1211,6 +1261,10 @@ class DentalAgent(AgentBase):
             name="decline_booking",
             description="Caller doesn't want to book this slot — go back to options.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "No problem, let me pull up the other options.",
+                "Sure, let's find a better fit.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def decline_booking(args, raw_data):
@@ -1223,6 +1277,10 @@ class DentalAgent(AgentBase):
             name="search_again",
             description="Caller wants to try different dates or preferences.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Let me search for some different options.",
+                "Sure, let's try other dates.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def search_again(args, raw_data):
@@ -1242,6 +1300,10 @@ class DentalAgent(AgentBase):
             name="restart",
             description="Start the conversation flow over — caller needs something else.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Of course, let me help with that.",
+                "Sure thing, what else do you need?",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def restart(args, raw_data):
@@ -1254,6 +1316,10 @@ class DentalAgent(AgentBase):
             name="log_call",
             description="Log this call to the patient's chart. Call this before ending.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Just saving some notes to your chart.",
+                "Logging our conversation.",
+            ],
             parameters={
                 "type": "object",
                 "properties": {
@@ -1297,6 +1363,11 @@ class DentalAgent(AgentBase):
             name="verify_identity_tool",
             description="Verify the caller's identity by checking their date of birth against the record.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Let me verify that against your records.",
+                "Checking your date of birth now.",
+                "Just confirming your identity.",
+            ],
             parameters={
                 "type": "object",
                 "properties": {
@@ -1349,6 +1420,11 @@ class DentalAgent(AgentBase):
             name="lookup_insurance_tool",
             description="Check if the patient has insurance on file.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Let me check your insurance on file.",
+                "Looking up your dental coverage.",
+                "Pulling up your insurance details.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def lookup_insurance_tool(args, raw_data):
@@ -1416,6 +1492,11 @@ class DentalAgent(AgentBase):
             name="save_insurance_tool",
             description="Save insurance information to the system. Executes the full chain: find/create carrier, plan, subscription, and patient plan.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Saving your insurance information now.",
+                "Setting up your coverage in our system.",
+                "Processing your insurance details, this may take a moment.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def save_insurance_tool(args, raw_data):
@@ -1547,6 +1628,10 @@ class DentalAgent(AgentBase):
             name="update_insurance_tool",
             description="Update existing insurance information — for plan changes, new card, etc.",
             wait_file="/sounds/typing.mp3",
+            fillers=[
+                "Let me update your insurance information.",
+                "Pulling up your plan to make changes.",
+            ],
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def update_insurance_tool(args, raw_data):
