@@ -28,6 +28,7 @@ class OutboundConfirmAgent(AgentBase):
 
         # AI model
         self.set_param("ai_model", config.AI_MODEL)
+        self.set_param("wait_for_user", True)
         self.set_prompt_llm_params(top_p=config.AI_TOP_P, temperature=config.AI_TEMPERATURE)
 
         # Personality
