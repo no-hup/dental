@@ -377,11 +377,11 @@ class OutboundConfirmAgent(AgentBase):
             name="confirm_outbound",
             description="Confirm the patient's appointment.",
             wait_file="/sounds/typing.mp3",
-            fillers=[
+            function_fillers={"en-US": [
                 "Marking your appointment as confirmed.",
                 "Updating your confirmation status now.",
                 "Locking that in for you.",
-            ],
+            ]},
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def confirm_outbound(args, raw_data):
@@ -410,10 +410,10 @@ class OutboundConfirmAgent(AgentBase):
             name="cancel_outbound",
             description="Cancel the patient's appointment after confirmation.",
             wait_file="/sounds/typing.mp3",
-            fillers=[
+            function_fillers={"en-US": [
                 "Processing your cancellation now.",
                 "Removing that appointment from the schedule.",
-            ],
+            ]},
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def cancel_outbound(args, raw_data):
@@ -442,11 +442,11 @@ class OutboundConfirmAgent(AgentBase):
             name="search_available_slots",
             description="Search for available appointment openings.",
             wait_file="/sounds/typing.mp3",
-            fillers=[
+            function_fillers={"en-US": [
                 "Checking the schedule for openings.",
                 "Looking for available times.",
                 "Searching our appointment book.",
-            ],
+            ]},
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def search_available_slots(args, raw_data):
@@ -524,11 +524,11 @@ class OutboundConfirmAgent(AgentBase):
             name="reschedule_outbound",
             description="Reschedule the appointment to a new slot.",
             wait_file="/sounds/typing.mp3",
-            fillers=[
+            function_fillers={"en-US": [
                 "Moving your appointment to the new time.",
                 "Updating the schedule for you.",
                 "Rescheduling that now.",
-            ],
+            ]},
             parameters={
                 "type": "object",
                 "properties": {
@@ -585,11 +585,11 @@ class OutboundConfirmAgent(AgentBase):
             name="book_recall",
             description="Book a recall appointment for the patient.",
             wait_file="/sounds/typing.mp3",
-            fillers=[
+            function_fillers={"en-US": [
                 "Booking your cleaning appointment now.",
                 "Getting that scheduled for you.",
                 "Reserving your spot on the calendar.",
-            ],
+            ]},
             parameters={
                 "type": "object",
                 "properties": {
@@ -652,10 +652,10 @@ class OutboundConfirmAgent(AgentBase):
             name="decline_recall",
             description="Patient declines to schedule their recall appointment now.",
             wait_file="/sounds/typing.mp3",
-            fillers=[
+            function_fillers={"en-US": [
                 "No worries, I'll make a note of that.",
                 "Understood, we'll follow up later.",
-            ],
+            ]},
             parameters={"type": "object", "properties": {}, "required": []},
         )
         def decline_recall(args, raw_data):
@@ -688,10 +688,10 @@ class OutboundConfirmAgent(AgentBase):
             name="unable_to_reach_tool",
             description="Log a failed contact attempt (voicemail, no answer, wrong number).",
             wait_file="/sounds/typing.mp3",
-            fillers=[
+            function_fillers={"en-US": [
                 "Logging the contact attempt.",
                 "Making a note for the office.",
-            ],
+            ]},
             parameters={
                 "type": "object",
                 "properties": {
@@ -721,10 +721,10 @@ class OutboundConfirmAgent(AgentBase):
             name="log_outbound_call",
             description="Log the outbound call result to OpenDental and local DB.",
             wait_file="/sounds/typing.mp3",
-            fillers=[
+            function_fillers={"en-US": [
                 "Saving the call details to your chart.",
                 "Just wrapping up the paperwork.",
-            ],
+            ]},
             parameters={
                 "type": "object",
                 "properties": {
