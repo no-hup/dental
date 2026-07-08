@@ -9,8 +9,8 @@ Simpler state machine than the inbound DentalAgent.
 import logging
 import json
 from datetime import datetime, timedelta
-from signalwire_agents import AgentBase
-from signalwire_agents.core.function_result import SwaigFunctionResult
+from signalwire import AgentBase
+from signalwire.core.function_result import SwaigFunctionResult
 
 import config
 import opendental_client as od
